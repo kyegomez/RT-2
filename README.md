@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control. RT-2 builds upon the successes of its predecessor, RT-1, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domains. Developed by [kyegomez](https://github.com/kyegomez), this README provides a comprehensive guide to understanding, installing, and using RT-2.
+Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control.
+
+RT-2 builds upon the successes of its predecessor, RT-1, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domains.
 
 ## Value Proposition
 
