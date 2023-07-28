@@ -154,13 +154,15 @@ with torch.no_grad():
 
 ```
 
-
-
 ## Model Architecture
 
 RT-2 integrates a high-capacity Vision-Language model (VLM), initially pre-trained on web-scale data, with robotics data from RT-2. The VLM uses images as input to generate a sequence of tokens representing natural language text. To adapt this for robotic control, RT-2 outputs actions represented as tokens in the model’s output.
 
 RT-2 is fine-tuned using both web and robotics data. The resultant model interprets robot camera images and predicts direct actions for the robot to execute. In essence, it converts visual and language patterns into action-oriented instructions, a remarkable feat in the field of robotic control.
+
+# Datasets
+[Head over to see some datasets they used in the paper](docs/DATASETS.md)
+
 
 ## Commercial Use Cases
 
