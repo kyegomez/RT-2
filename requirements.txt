@@ -5,6 +5,5 @@ palme
 transformers
 palm-rlhf-pytorch
 tokenizers
-hidet
 wandb
 classifier-free-guidance-pytorch>

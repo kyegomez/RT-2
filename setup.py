@@ -19,6 +19,14 @@ setup(
     install_requires=[
         'transformers',
         'torch',
+        'einops',
+        'beartype',
+        'palme',
+        'transformers',
+        'palm-rlhf-pytorch',
+        'tokenizers',
+        'wandb',
+        'classifier-free-guidance-pytorch'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
