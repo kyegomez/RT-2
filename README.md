@@ -1,13 +1,13 @@
 # Robotic Transformer 2 (RT-2): The Vision-Language-Action Model
 
-<!-- <div align="center">
-
+<div align="center">
+<!-- 
 [![Open Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fkyegomez%2FRT-2%2Fbounties%3Fstatus%3Dopen)](https://console.algora.io/org/kyegomez/RT-2/bounties?status=open)
-[![Rewarded Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fkyegomez%2FRT-2%2Fbounties%3Fstatus%3Dcompleted)](https://console.algora.io/org/kyegomez/RT-2/bounties?status=completed)
+[![Rewarded Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fkyegomez%2FRT-2%2Fbounties%3Fstatus%3Dcompleted)](https://console.algora.io/org/kyegomez/RT-2/bounties?status=completed) -->
 
 [![GitHub issues](https://img.shields.io/github/issues/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/issues) [![GitHub forks](https://img.shields.io/github/forks/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/network) [![GitHub stars](https://img.shields.io/github/stars/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/stargazers) [![GitHub license](https://img.shields.io/github/license/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/blob/master/LICENSE)
 
-</div> -->
+</div>
 
 <div align="center">
 
