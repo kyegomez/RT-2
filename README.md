@@ -5,7 +5,7 @@
 [![Open Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fkyegomez%2Frt-1%2Fbounties%3Fstatus%3Dopen)](https://console.algora.io/org/kyegomez/rt-1/bounties?status=open)
 [![Rewarded Bounties](https://img.shields.io/endpoint?url=https%3A%2F%2Fconsole.algora.io%2Fapi%2Fshields%2Fkyegomez%2Frt-1%2Fbounties%3Fstatus%3Dcompleted)](https://console.algora.io/org/kyegomez/rt-1/bounties?status=completed)
 
-[![GitHub issues](https://img.shields.io/github/issues/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/issues) [![GitHub forks](https://img.shields.io/github/forks/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/network) [![GitHub stars](https://img.shields.io/github/stars/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/stargazers) [![GitHub license](https://img.shields.io/github/license/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/issues) [![GitHub forks](https://img.shields.io/github/forks/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/network) [![GitHub stars](https://img.shields.io/github/stars/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/stargazers) [![GitHub license](https://img.shields.io/github/license/kyegomez/rt-1)](https://github.com/kyegomez/rt-1/blob/master/LICENSE)
 
 </div>
 
@@ -36,7 +36,7 @@
 
 Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control.
 
-RT-2 builds upon the successes of its predecessor, RT-1, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domains.
+RT-2 builds upon the successes of its predecessor, RT-1, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domasters.
 
 ## Value Proposition
 
@@ -45,7 +45,7 @@ RT-2 stands at the intersection of vision, language, and action, delivering unma
 - **Maximized Outcome**: Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.
 - **High Perceived Likelihood of Success**: RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.
 - **Minimized Time to Success**: With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.
-- **Minimal Effort & Sacrifice**: RT-2 simplifies the complexities of multi-domain understanding, reducing the burden on your data processing and action prediction pipeline.
+- **Minimal Effort & Sacrifice**: RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.
 
 ## Installation
 
@@ -77,7 +77,7 @@ The unique capabilities of RT-2 open up numerous commercial applications:
 
 ## Examples and Documentation
 
-Detailed examples and comprehensive documentation for using RT-2 can be found in the [examples](https://github.com/kyegomez/RT-2/tree/main/examples) directory and the [documentation](https://github.com/kyegomez/RT-2/tree/main/docs) directory, respectively.
+Detailed examples and comprehensive documentation for using RT-2 can be found in the [examples](https://github.com/kyegomez/RT-2/tree/master/examples) directory and the [documentation](https://github.com/kyegomez/RT-2/tree/master/docs) directory, respectively.
 
 ## Contributing
 
