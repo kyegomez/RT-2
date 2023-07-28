@@ -35,14 +35,14 @@ Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model t
 
 RT-2 builds upon the successes of its predecessor, RT-2, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domasters.
 
-## Value Proposition
+## Benefits
 
 RT-2 stands at the intersection of vision, language, and action, delivering unmatched capabilities and significant benefits for the world of robotics.
 
-- **Maximized Outcome**: Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.
-- **High Perceived Likelihood of Success**: RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.
-- **Minimized Time to Success**: With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.
-- **Minimal Effort & Sacrifice**: RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.
+- Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.
+- RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.
+- With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.
+- RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.
 
 ## Installation
 
@@ -55,8 +55,12 @@ pip install rt2
 Additionally, you can manually install the dependencies:
 
 ```bash
-pip install torch transformers
+pip install -r requirements.txt
 ```
+
+# Usage
+
+
 
 ## Model Architecture
 
