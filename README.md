@@ -31,9 +31,11 @@
 ---
 
 
-Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control.
+Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control. 
 
 RT-2 builds upon the successes of its predecessor, RT-2, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domasters.
+
+[CLICK HERE FOR THE PAPER](https://robotics-transformer2.github.io/assets/rt2.pdf)
 
 ## Benefits
 
@@ -183,3 +185,21 @@ RT-2 is provided under the MIT License. See the LICENSE file for details.
 ## Contact
 
 For any queries or issues, kindly open a GitHub issue or get in touch with [kyegomez](https://github.com/kyegomez).
+
+## Citation
+
+```
+@inproceedings{RT-2,2023,
+  title={},
+  author={Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar, Xi Chen, Krzysztof Choromanski,
+Tianli Ding, Danny Driess, Avinava Dubey, Chelsea Finn, Pete Florence, Chuyuan Fu,
+Montse Gonzalez Arenas, Keerthana Gopalakrishnan, Kehang Han, Karol Hausman, Alexander Herzog,
+Jasmine Hsu, Brian Ichter, Alex Irpan, Nikhil Joshi, Ryan Julian, Dmitry Kalashnikov, Yuheng Kuang,
+Isabel Leal, Lisa Lee, Tsang-Wei Edward Lee, Sergey Levine, Yao Lu, Henryk Michalewski, Igor Mordatch,
+Karl Pertsch, Kanishka Rao, Krista Reymann, Michael Ryoo, Grecia Salazar, Pannag Sanketi,
+Pierre Sermanet, Jaspiar Singh, Anikait Singh, Radu Soricut, Huong Tran, Vincent Vanhoucke, Quan Vuong,
+Ayzaan Wahid, Stefan Welker, Paul Wohlhart, Jialin Wu, Fei Xia, Ted Xiao, Peng Xu, Sichun Xu, Tianhe Yu,
+and Brianna Zitkovich},
+  year={2024}
+}
+```
