@@ -1,3 +1,5 @@
+# Model architectures
+
 | Model | Architecture | Learning Rate | Batch Size | Gradient Steps |
 |-------|--------------|---------------|------------|----------------|
 | RT-2-PaLI-X-55B | Uses a ViT-22B to process images. The image tokens are passed over a projection layer and then consumed by an encoder-decoder backbone of 32B parameters and 50 layers, similar to UL2. | 1e-3 | 2048 | 80K |
