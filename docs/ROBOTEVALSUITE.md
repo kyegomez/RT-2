@@ -1,3 +1,6 @@
+# Robot Evaluation Suite
+
+
 | Evaluation | Description | Instructions | Benchmark |
 |------------|-------------|--------------|-----------|
 | Performance on Seen Tasks | Measures how well the model performs on tasks that it has been trained on. | Run the model on the training set and measure its performance. | State-of-the-art performance on the training set. |
