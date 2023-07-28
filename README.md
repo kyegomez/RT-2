@@ -181,7 +181,7 @@ for writing this amazing paper and advancing Humanity
 
 * LucidRains for providing the base repositories for [PALM](https://github.com/lucidrains/PaLM-rlhf-pytorch) and [RT-1](https://github.com/kyegomez/RT-2)
 
-* Any you yes the purpose looking at this right now, I appreciate you and love you.
+* Any you yes the person looking at this right now, I appreciate you and love you.
 
 ## Commercial Use Cases
 
