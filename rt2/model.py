@@ -45,14 +45,6 @@ def pos_emb_sincos_1d(seq, dim, temperature=10000, device=None, dtype=torch.floa
     pos_emb = torch.cat((n.sin(), n.cos()), dim=1)
     return pos_emb.type(dtype)
 
-#HELPER CLASSes
-class Residual(nn.Module):
-    def __init__(self, fn):
-        super().__init__()
-        self.fn = fn
-    
-    def forward(self, x):
-        return self.fn(x) + x
     
 class LayerNorm(nn.Module):
     def __init__(self, dim):
@@ -62,72 +54,11 @@ class LayerNorm(nn.Module):
     
     def forward(self, x):
         return F.layer_norm(x, x.shape[-1:], self.gamma, self.beta)
-    
-class FeedForward(nn.Module):
-    def __init__(self, dim, mult=4, dropout=0.):
-        super().__init__()
-        inner_dim = int(dim * mult)
-        self.norm = LayerNorm(dim)
 
-        self.net = nn.Sequential(
-            nn.Linear(dim, inner_dim),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(inner_dim, dim),
-            nn.dropout(dropout)
-        )
-    def forward(self, x, cond_fn=None):
-        x = self.norm(x)
-
-        if exists(cond_fn):
-            #adaptive layernorm
-            x = cond_fn(x)
 
 #MBCONV
 
-class SqueezeExcitation(nn.Module):
-    def __init__(self, dim, shrinkage_rate=0.25):
-        super().__init__()
-        hidden_dim = int(dim * shrinkage_rate)
 
-        self.gate = nn.Sequential(
-            Reduce('b c h w -> b c', 'mean'),
-            nn.Linear(dim, hidden_dim, bias=False),
-            nn.SiLU(),
-            nn.Linear(hidden_dim, dim, bias=False),
-            nn.Sigmoid(),
-            Rearrange('b c -> b c 1 1')
-        )
-    
-    def forward(self, x):
-        return x + self.gate(x)
-
-class MBConvResidual(nn.Module):
-    def __init__(self, fn, dropout=0.):
-        super().__init__()
-        self.fn = fn
-        self.dropsample = Dropsample(dropout)
-    
-    def forward(self, x):
-        out = self.fn(x)
-        out = self.dropsample(out)
-        return out + x
-
-class Dropsample(nn.Module):
-    def __init__(self, prob=0):
-        super().__init__()
-        self.prob
-    
-    def forward(self, x):
-        device = x.device
-
-        if self.prob == 0. or (not self.training):
-            return x
-        
-        keep_mask = torch.FloatTensor((x.shape[0], 1, 1, 1), device=device).uniform_() > self.prob
-        return x + keep_mask / (1 - self.prob)
-    
-    
 class TokenLearner(nn.Module):
     def __init__(
             self,

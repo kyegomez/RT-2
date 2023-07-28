@@ -1,7 +1,8 @@
-torch>=2.0.0
-palm-rlhf-pytorch
+torch
+palme
 transformers
-datasets
+palm-rlhf-pytorch
 tokenizers
 hidet
 wandb
+classifier-free-guidance-pytorch>
