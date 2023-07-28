@@ -61,6 +61,98 @@ pip install -r requirements.txt
 # Usage
 
 
+The `RT2` class is a PyTorch module that integrates the PALM-E model into the RT-2 class. Here are some examples of how to use it:
+
+#### Initialization
+
+First, you need to initialize the `RT2` class. You can do this by providing the necessary parameters to the constructor:
+
+```python
+
+from rt2 import PALME, RT2
+
+rt2 = RT2(
+    palme=PALME(),
+    num_actions=11,
+    action_bins=256,
+    depth=6,
+    heads=8,
+    dim_head=64,
+    token_learner_ff_mult=2,
+    token_learner_num_layers=2,
+    token_learner_num_output_tokens=8,
+    cond_drop_prob=0.2,
+    use_attn_conditioner=False,
+    conditioner_kwargs=dict()
+)
+
+```
+
+#### Forward Pass
+After initializing the RT2 class, you can perform a forward pass by calling the forward method and providing a video and optional texts:
+
+```python
+
+video = torch.rand((1, 3, 224, 224))
+texts = ["this is a text"]
+output = rt2(video, texts)
+
+```
+* The forward method returns the logits for the given video and texts.
+
+
+#### Changing Parameters
+You can also change the parameters of the RT2 class after initialization. For example, you can change the number of actions and action bins:
+
+```python
+rt2.num_actions = 5
+rt2.action_bins = 128
+```
+* After changing the parameters, you can perform a forward pass as before:
+
+```python
+output = rt2(video, texts)
+```
+
+#### Saving and Loading The Model
+
+```python
+torch.save(rt2.state_dict(), 'rt3_model.pth')
+```
+
+* You can then load the model with `torch.load``
+
+```python
+model = RT2(
+    palme=PALME(),
+    num_actions=11,
+    action_bins=256,
+    depth=6,
+    heads=8,
+    dim_head=64,
+    token_learner_ff_mult=2,
+    token_learner_num_layers=2,
+    token_learner_num_output_tokens=8,
+    cond_drop_prob=0.2,
+    use_attn_conditioner=False,
+    conditioner_kwargs=dict()
+)
+model.load_state_dict(torch.load('rt_model.pth'))
+```
+
+#### Eval the Model
+* Evaluate RT2 by setting it to eval mode and then performing a forward pass
+```python
+
+model.eval()
+with torch.no_grad():
+    video = torch.randn((1, 3, 10, 224))
+    texts = ["this is  atest"]
+    output = model(video, texts)
+
+```
+
+
 
 ## Model Architecture
 
