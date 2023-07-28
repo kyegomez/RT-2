@@ -164,6 +164,22 @@ RT-2 is fine-tuned using both web and robotics data. The resultant model interpr
 [Head over to see some datasets they used in the paper](docs/DATASETS.md)
 
 
+
+# Appreciation
+* ```Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar, Xi Chen, Krzysztof Choromanski,
+Tianli Ding, Danny Driess, Avinava Dubey, Chelsea Finn, Pete Florence, Chuyuan Fu,
+Montse Gonzalez Arenas, Keerthana Gopalakrishnan, Kehang Han, Karol Hausman, Alexander Herzog,
+Jasmine Hsu, Brian Ichter, Alex Irpan, Nikhil Joshi, Ryan Julian, Dmitry Kalashnikov, Yuheng Kuang,
+Isabel Leal, Lisa Lee, Tsang-Wei Edward Lee, Sergey Levine, Yao Lu, Henryk Michalewski, Igor Mordatch,
+Karl Pertsch, Kanishka Rao, Krista Reymann, Michael Ryoo, Grecia Salazar, Pannag Sanketi,
+Pierre Sermanet, Jaspiar Singh, Anikait Singh, Radu Soricut, Huong Tran, Vincent Vanhoucke, Quan Vuong,
+Ayzaan Wahid, Stefan Welker, Paul Wohlhart, Jialin Wu, Fei Xia, Ted Xiao, Peng Xu, Sichun Xu, Tianhe Yu,
+and Brianna Zitkovich``` for writing this amazing paper and advancing Humanity
+
+* LucidRains for providing the base repositories for [PALM](https://github.com/lucidrains/PaLM-rlhf-pytorch) and [RT-1](https://github.com/kyegomez/RT-2)
+
+* Any you yes the purpose looking at this right now, I appreciate you and love you.
+
 ## Commercial Use Cases
 
 The unique capabilities of RT-2 open up numerous commercial applications:
