@@ -197,3 +197,7 @@ class RT2(nn.Module):
 
         logits = self.to_logits(pooled)
         return logits
+
+RT2 = RT2(
+    
+)
