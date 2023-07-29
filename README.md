@@ -2,7 +2,10 @@
 
 <div align="center">
 
-[![GitHub issues](https://img.shields.io/github/issues/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/issues) [![GitHub forks](https://img.shields.io/github/forks/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/network) [![GitHub stars](https://img.shields.io/github/stars/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/stargazers) [![GitHub license](https://img.shields.io/github/license/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/issues) 
+[![GitHub forks](https://img.shields.io/github/forks/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/network) 
+[![GitHub stars](https://img.shields.io/github/stars/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/stargazers) 
+[![GitHub license](https://img.shields.io/github/license/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/blob/master/LICENSE)
 
 </div>
 
