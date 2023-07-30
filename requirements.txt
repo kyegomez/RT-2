@@ -1,6 +1,8 @@
 torch
 einops
 beartype
+pali-torch
+
 palme
 transformers
 palm-rlhf-pytorch
