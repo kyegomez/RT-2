@@ -16,8 +16,6 @@ from classifier_free_guidance_pytorch import (
     classifier_free_guidance,
 )
 
-from pali import pali
-
 
 #helpers
 def exists(val):
