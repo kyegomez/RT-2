@@ -1,9 +1,5 @@
 from pali import pali
 
-
-
-
-
 from typing import List, Optional
 
 import torch
@@ -20,7 +16,7 @@ from classifier_free_guidance_pytorch import (
     classifier_free_guidance,
 )
 
-from palme import PALME
+from pali import pali
 
 
 #helpers
@@ -103,7 +99,7 @@ class RT2(nn.Module):
     def __init__(
         self,
         *,
-        palme: PALME,
+        pali: pali,
         num_actions = 11,
         action_bins = 256,
         depth = 6,
@@ -117,21 +113,21 @@ class RT2(nn.Module):
         conditioner_kwargs: dict = dict()
     ):
         super().__init__()
-        self.palme = palme
+        self.pali = pali
 
-        self.num_palme_stages = len(palme.cond_hidden_dims)
+        self.num_pali_stages = len(pali.cond_hidden_dims)
 
         conditioner_klass = AttentionTextConditioner if use_attn_conditioner else TextConditioner
 
         self.conditioner = conditioner_klass(
-            hidden_dims = (*tuple(palme.cond_hidden_dims), *((palme.embed_dim,) * depth * 2)),
-            hiddens_channel_first = (*((True,) * self.num_palme_stages), *((False,) * depth * 2)),
+            hidden_dims = (*tuple(pali.cond_hidden_dims), *((pali.embed_dim,) * depth * 2)),
+            hiddens_channel_first = (*((True,) * self.num_pali_stages), *((False,) * depth * 2)),
             cond_drop_prob = cond_drop_prob,
             **conditioner_kwargs
         )
 
         self.token_learner = TokenLearner(
-            dim = palme.embed_dim,
+            dim = pali.embed_dim,
             ff_mult = token_learner_ff_mult,
             num_output_tokens = token_learner_num_output_tokens,
             num_layers = token_learner_num_layers
@@ -144,8 +140,8 @@ class RT2(nn.Module):
         self.cond_drop_prob = cond_drop_prob
 
         self.to_logits = nn.Sequential(
-            LayerNorm(palme.embed_dim),
-            nn.Linear(palme.embed_dim, num_actions * action_bins),
+            LayerNorm(pali.embed_dim),
+            nn.Linear(pali.embed_dim, num_actions * action_bins),
             Rearrange('... (a b) -> ... a b', b = action_bins)
         )
 
@@ -164,18 +160,18 @@ class RT2(nn.Module):
         cond_fns = self.conditioner(
             texts,
             cond_drop_prob = cond_drop_prob,
-            repeat_batch = (*((frames,) * self.num_palme_stages), *((1,) * self.transformer_depth * 2))
+            repeat_batch = (*((frames,) * self.num_pali_stages), *((1,) * self.transformer_depth * 2))
         )
 
-        palme_cond_fns, transformer_cond_fns = cond_fns[:-(depth * 2)], cond_fns[-(depth * 2):]
+        pali_cond_fns, transformer_cond_fns = cond_fns[:-(depth * 2)], cond_fns[-(depth * 2):]
 
         video = rearrange(video, 'b c f h w -> b f c h w')
         images, packed_shape = pack_one(video, '* c h w')
 
-        tokens = self.palme(
+        tokens = self.pali(
             images,
             texts = texts,
-            cond_fns = palme_cond_fns,
+            cond_fns = pali_cond_fns,
             cond_drop_prob = cond_drop_prob,
             return_embeddings = True
         )
@@ -197,7 +193,7 @@ class RT2(nn.Module):
         learned_tokens = learned_tokens + repeat(pos_emb, 'n d -> (n r) d', r = self.num_learned_tokens)
 
         # attention
-        attended_tokens = self.palme(learned_tokens, cond_fns = transformer_cond_fns, attn_mask = ~attn_mask)
+        attended_tokens = self.pali(learned_tokens, cond_fns = transformer_cond_fns, attn_mask = ~attn_mask)
 
         pooled = reduce(attended_tokens, 'b (f n) d -> b f d', 'mean', f = frames)
 
