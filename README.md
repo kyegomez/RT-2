@@ -35,20 +35,10 @@
 ---
 
 
-Robotic Transformer 2 (RT-2) is an advanced Vision-Language-Action (VLA) model that leverages both web and robotics data to generate actionable instructions for robotic control. 
-
-RT-2 builds upon the successes of its predecessor, RT-2, and demonstrates superior capabilities in generalization, reasoning, and understanding across visual and semantic domasters.
+Robotic Transformer 2 (RT-2) leverages both web and robotics data to generate actionable instructions for robotic control. 
 
 [CLICK HERE FOR THE PAPER](https://robotics-transformer2.github.io/assets/rt2.pdf)
 
-## Benefits
-
-RT-2 stands at the intersection of vision, language, and action, delivering unmatched capabilities and significant benefits for the world of robotics.
-
-- Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.
-- RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.
-- With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.
-- RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.
 
 ## Installation
 
@@ -157,6 +147,16 @@ with torch.no_grad():
     output = model(video, texts)
 
 ```
+
+
+## Benefits
+
+RT-2 stands at the intersection of vision, language, and action, delivering unmatched capabilities and significant benefits for the world of robotics.
+
+- Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.
+- RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.
+- With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.
+- RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.
 
 ## Model Architecture
 
