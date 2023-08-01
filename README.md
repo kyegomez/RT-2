@@ -1,4 +1,5 @@
 # Robotic Transformer 2 (RT-2): The Vision-Language-Action Model
+![rt gif](rt.gif)
 
 <div align="center">
 
