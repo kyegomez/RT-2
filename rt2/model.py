@@ -97,7 +97,7 @@ class RT2(nn.Module):
     def __init__(
         self,
         *,
-        palme: PALME,
+        palme: PalmE,
         num_actions = 11,
         action_bins = 256,
         depth = 6,

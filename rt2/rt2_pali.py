@@ -16,7 +16,6 @@ from classifier_free_guidance_pytorch import (
     classifier_free_guidance,
 )
 
-
 #helpers
 def exists(val):
     return val is not None
