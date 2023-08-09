@@ -14,7 +14,7 @@ from classifier_free_guidance_pytorch import (
     classifier_free_guidance,
 )
 
-from palme import PALME
+from palme import PalmE
 
 
 #helpers
