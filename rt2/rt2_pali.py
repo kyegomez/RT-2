@@ -90,7 +90,7 @@ class TokenLearner(nn.Module):
 
 
 @beartype
-class RT2(nn.Module):
+class RT2Pali(nn.Module):
     def __init__(
         self,
         *,
