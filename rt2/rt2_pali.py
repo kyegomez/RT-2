@@ -1,20 +1,18 @@
-from pali import pali
-
 from typing import List, Optional
 
 import torch
-from torch import nn
 import torch.nn.functional as F
-
 from beartype import beartype
-from einops import pack, rearrange, reduce, repeat, unpack
-from einops.layers.torch import Rearrange, Reduce
-
 from classifier_free_guidance_pytorch import (
     AttentionTextConditioner,
     TextConditioner,
     classifier_free_guidance,
 )
+from einops import pack, rearrange, reduce, repeat, unpack
+from einops.layers.torch import Rearrange
+from pali import pali
+from torch import nn
+
 
 #helpers
 def exists(val):

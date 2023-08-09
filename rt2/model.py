@@ -1,20 +1,17 @@
 from typing import List, Optional
 
 import torch
-from torch import nn
 import torch.nn.functional as F
-
 from beartype import beartype
-from einops import pack, rearrange, reduce, repeat, unpack
-from einops.layers.torch import Rearrange, Reduce
-
 from classifier_free_guidance_pytorch import (
     AttentionTextConditioner,
     TextConditioner,
     classifier_free_guidance,
 )
-
+from einops import pack, rearrange, reduce, repeat, unpack
+from einops.layers.torch import Rearrange, Reduce
 from palme import PalmE
+from torch import nn
 
 
 #helpers
@@ -56,9 +53,6 @@ class LayerNorm(nn.Module):
         return F.layer_norm(x, x.shape[-1:], self.gamma, self.beta)
 
 
-#MBCONV
-
-
 class TokenLearner(nn.Module):
     def __init__(
             self,
@@ -89,7 +83,6 @@ class TokenLearner(nn.Module):
         x = reduce(x * attn, 'b c g h w -> b c g', 'mean')
         x = unpack_one(x, ps, '8 c n')
         return x
-    
 
 
 @beartype

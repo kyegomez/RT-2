@@ -1,8 +1,8 @@
 import torch
-from rt2.model import pali, RT2
+from rt2.rt2_pali import pali, RT2
 
 model = RT2(
-    palme=PalmE(),
+    palme=pali,
     num_actions=11,
     action_bins=256,
     depth=6,
