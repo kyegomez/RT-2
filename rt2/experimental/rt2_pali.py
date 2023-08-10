@@ -10,7 +10,7 @@ from classifier_free_guidance_pytorch import (
 )
 from einops import pack, rearrange, reduce, repeat, unpack
 from einops.layers.torch import Rearrange
-from pali import pali
+from pali import VitModel, Pali
 from torch import nn
 
 
@@ -94,7 +94,8 @@ class RT2Pali(nn.Module):
     def __init__(
         self,
         *,
-        pali: pali,
+        pali: Pali,
+        vit_model: VitModel,
         num_actions = 11,
         action_bins = 256,
         depth = 6,
@@ -108,6 +109,7 @@ class RT2Pali(nn.Module):
         conditioner_kwargs: dict = dict()
     ):
         super().__init__()
+        self.vit_model = vit_model
         self.pali = pali
 
         self.num_pali_stages = len(pali.cond_hidden_dims)
@@ -162,10 +164,12 @@ class RT2Pali(nn.Module):
 
         video = rearrange(video, 'b c f h w -> b f c h w')
         images, packed_shape = pack_one(video, '* c h w')
+        img_embeds = self.vit_model.process(images)
+        
 
         tokens = self.pali(
-            images,
-            texts = texts,
+            texts,
+            image_embeds = img_embeds,
             cond_fns = pali_cond_fns,
             cond_drop_prob = cond_drop_prob,
             return_embeddings = True

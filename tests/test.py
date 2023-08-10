@@ -1,6 +1,6 @@
 import torch
 import unittest
-from rt2.model import PALME, RT2
+from rt2.experimental.rt2_palme import PALME, RT2
 
 class TestRT2(unittest.TestCase):
     def setUp(self):

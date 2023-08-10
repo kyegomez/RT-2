@@ -1,23 +1,13 @@
-import torch
-from rt2.model import pali, RT2
+import torch 
+from rt2.model import RT2
 
-model = RT2(
-    palme=PalmE(),
-    num_actions=11,
-    action_bins=256,
-    depth=6,
-    heads=8,
-    dim_head=64,
-    token_learner_ff_mult=2,
-    token_learner_num_layers=2,
-    token_learner_num_output_tokens=8,
-    cond_drop_prob=0.2,
-    use_attn_conditioner=False,
-    conditioner_kwargs=dict()
-)
+rt2 = RT2()
 
-video = torch.rand((1, 3, 224, 224))
-texts = ["this is a text"]
-output = model(video, texts)
+video = torch.randn(2, 3, 6, 224, 224)
+instructions = [
+    "bring me an apple on that tree"
+]
 
-print(output.shape)
+train_logits = rt2(video, instructions)
+rt2.eval()
+eval_logits = rt2(video, instructions, cond_scale=2)

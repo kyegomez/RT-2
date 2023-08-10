@@ -39,7 +39,7 @@ from transformers import (
 )
 
 from rt2.utils.stable_adamw import StableAdamWUnfused
-from rt2.model import PALME, RT2
+from rt2.experimental.rt2_palme import PALME, RT2
 
 
 # setup 
