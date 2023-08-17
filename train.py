@@ -39,7 +39,7 @@ from transformers import (
 )
 
 from rt2.utils.stable_adamw import StableAdamWUnfused
-from rt2.experimental.rt2_palme import PALME, RT2
+from rt2.experimental.rt2_palme import PalmE, RT2
 
 
 # setup 
@@ -494,7 +494,7 @@ def Train():
     set_seed(CFG.SEED)
 
     model =RT2(
-        palme=PALME(),
+        palme=PalmE(),
         num_actions=11,
         action_bins=256,
         depth=6,
