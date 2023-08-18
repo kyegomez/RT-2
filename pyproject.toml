@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rt2"
-version = "0.0.4"
+version = "0.0.5"
 description = "rt-2 - PyTorch"
 authors = ["Kye Gomez <kye@apac.ai>"]
 license = "MIT"
