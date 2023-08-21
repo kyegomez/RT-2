@@ -1,16 +1,16 @@
+from typing import Callable, List, Optional, Tuple
+
 import torch
 import torch.nn.functional as F
-from torch import nn, einsum
-
-from typing import List, Optional, Callable, Tuple
 from beartype import beartype
-
-from einops import pack, unpack, repeat, reduce, rearrange
+from classifier_free_guidance_pytorch import (
+    AttentionTextConditioner,
+    TextConditioner,
+    classifier_free_guidance,
+)
+from einops import pack, rearrange, reduce, repeat, unpack
 from einops.layers.torch import Rearrange, Reduce
-
-from functools import partial
-
-from classifier_free_guidance_pytorch import TextConditioner, AttentionTextConditioner, classifier_free_guidance
+from torch import einsum, nn
 
 # helpers
 
@@ -398,7 +398,7 @@ class TransformerAttention(nn.Module):
         attn_mask = None,
         cond_fn: Optional[Callable] = None
     ):
-        b = x.shape[0]
+        x.shape[0]
 
         if exists(context):
             context = self.context_norm(context)
@@ -588,7 +588,8 @@ class RT1(nn.Module):
         cond_fns = self.conditioner(
             texts,
             cond_drop_prob = cond_drop_prob,
-            repeat_batch = (*((frames,) * self.num_vit_stages), *((1,) * self.transformer_depth * 2))
+            repeat_batch = (*((frames,) * self.num_vit_stages), *((1,) * 
+                                                                  self.transformer_depth * 2))
         )
 
         vit_cond_fns, transformer_cond_fns = cond_fns[:-(depth * 2)], cond_fns[-(depth * 2):]
@@ -612,17 +613,21 @@ class RT1(nn.Module):
         # causal attention mask
 
         attn_mask = torch.ones((frames, frames), dtype = torch.bool, device = device).triu(1)
-        attn_mask = repeat(attn_mask, 'i j -> (i r1) (j r2)', r1 = self.num_learned_tokens, r2 = self.num_learned_tokens)
+        attn_mask = repeat(attn_mask, 'i j -> (i r1) (j r2)', r1 = self.num_learned_tokens, 
+                           r2 = self.num_learned_tokens)
 
         # sinusoidal positional embedding
 
-        pos_emb = posemb_sincos_1d(frames, learned_tokens.shape[-1], dtype = learned_tokens.dtype, device = learned_tokens.device)
+        pos_emb = posemb_sincos_1d(frames, learned_tokens.shape[-1], 
+                                   dtype = learned_tokens.dtype, device = learned_tokens.device)
 
         learned_tokens = learned_tokens + repeat(pos_emb, 'n d -> (n r) d', r = self.num_learned_tokens)
 
         # attention
 
-        attended_tokens = self.transformer(learned_tokens, cond_fns = transformer_cond_fns, attn_mask = ~attn_mask)
+        attended_tokens = self.transformer(learned_tokens, 
+                                           cond_fns = transformer_cond_fns, 
+                                           attn_mask = ~attn_mask)
 
         pooled = reduce(attended_tokens, 'b (f n) d -> b f d', 'mean', f = frames)
 
@@ -651,7 +656,7 @@ class RT2:
             num_classes=num_classes,
             dim_conv_stem=dim_conv_stem,
             dim=dim,
-            dim_head=dim_head,
+            dim_head=32,
             depth=vit_depth,
             window_size=window_size,
             mbconv_expansion_rate=mbconv_expansion_rate,
@@ -677,6 +682,3 @@ class RT2:
         else:
             return self.model(video, instructions)
         
-
-
-#usage

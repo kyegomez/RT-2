@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "rt2"
+version = "0.0.5"
+description = "rt-2 - PyTorch"
+authors = ["Kye Gomez <kye@apac.ai>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/kyegomez/rt-2"
+repository = "https://github.com/kyegomez/rt-2"
+documentation = "https://github.com/kyegomez/rt-2"
+keywords = ["artificial intelligence", "deep learning", "optimizers", "Prompt Engineering"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.6",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+transformers = "*"
+torch = "*"
+einops = "*"
+beartype = "*"
+palme = "*"
+palm-rlhf-pytorch = "*"
+tokenizers = "*"
+wandb = "*"
+classifier-free-guidance-pytorch = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

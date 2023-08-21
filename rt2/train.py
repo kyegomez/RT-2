@@ -39,7 +39,7 @@ from transformers import (
 )
 
 from rt2.utils.stable_adamw import StableAdamWUnfused
-from rt2.experimental.rt2_palme import PalmE, RT2
+from rt2.model import RT2
 
 
 # setup 
@@ -493,20 +493,7 @@ def Train():
 
     set_seed(CFG.SEED)
 
-    model =RT2(
-        palme=PalmE(),
-        num_actions=11,
-        action_bins=256,
-        depth=6,
-        heads=8,
-        dim_head=64,
-        token_learner_ff_mult=2,
-        token_learner_num_layers=2,
-        token_learner_num_output_tokens=8,
-        cond_drop_prob=0.2,
-        use_attn_conditioner=False,
-        conditioner_kwargs=dict()
-    )
+    model = RT2()
 
     print_num_params(model, accelerator)
 
