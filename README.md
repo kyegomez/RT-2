@@ -56,16 +56,23 @@ First, you need to initialize the `RT2` class. You can do this by providing the 
 import torch 
 from rt2.model import RT2
 
-rt2 = RT2()
+model = RT2()
 
 video = torch.randn(2, 3, 6, 224, 224)
+
 instructions = [
-    "bring me an apple on that tree"
+    'bring me that apple sitting on the table',
+    'please pass the butter'
 ]
 
-train_logits = rt2(video, instructions)
-rt2.eval()
-eval_logits = rt2(video, instructions, cond_scale=2)
+# compute the train logits
+train_logits = model.train(video, instructions)
+
+# set the model to evaluation mode
+model.model.eval()
+
+# compute the eval logits with a conditional scale of 3
+eval_logits = model.eval(video, instructions, cond_scale=3.)
 
 ```
 

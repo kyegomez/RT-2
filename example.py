@@ -10,8 +10,11 @@ instructions = [
     'please pass the butter'
 ]
 
+# compute the train logits
 train_logits = model.train(video, instructions)
 
-model.eval()
+# set the model to evaluation mode
+model.model.eval()
 
+# compute the eval logits with a conditional scale of 3
 eval_logits = model.eval(video, instructions, cond_scale=3.)
