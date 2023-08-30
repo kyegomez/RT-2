@@ -10,8 +10,8 @@ instructions = [
     'please pass the butter'
 ]
 
-train_logits = model(video, instructions) # (2, 6, 11, 256) # (batch, frames, actions, bins)
+train_logits = model.train(video, instructions)
 
 model.eval()
 
-eval_logits = model(video, instructions, cond_scale = 3.) # classifier free guidance with conditional scale of 3
+eval_logits = model.eval(video, instructions, cond_scale=3.)
