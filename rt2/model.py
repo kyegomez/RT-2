@@ -631,36 +631,146 @@ class RT1(nn.Module):
         logits = self.to_logits(pooled)
         return logits
     
-
 class RT2:
-    def __init__(self):
+    """
+    A class for real-time video processing using Vision Transformers (ViT) and Reinforcement Learning (RT1) models.
+
+    ...
+
+    Attributes
+    ----------
+    vit : MaxViT
+        a Vision Transformer model
+    model : RT1
+        a reinforcement learning model
+
+    Methods
+    -------
+    train(video, instructions):
+        Computes the logits for the given video and instructions using the RT1 model in training mode.
+    eval(video, instructions, cond_scale=1.0):
+        Computes the logits for the given video and instructions using the RT1 model in evaluation mode.
+    """
+
+    def __init__(self, 
+                 num_classes = 1000, 
+                 dim = 96, 
+                 dim_conv_stem = 64,
+                 dim_head_vit = 32, 
+                 depth_vit = (2, 2, 5, 2), 
+                 window_size = 7, 
+                 mbconv_expansion_rate = 4, 
+                 mbconv_shrinkage_rate = 0.25, 
+                 dropout_vit = 0.1, 
+                 num_actions = 11,  
+                 depth_rt1 = 6, 
+                 heads = 8, 
+                 dim_head_rt1 = 64, 
+                 cond_drop_prob = 0.2
+                 ):
+        """
+        Constructs all the necessary attributes for the RT2 object.
+
+        Parameters
+        ----------
+        num_classes : int
+            number of classes for the ViT model
+        dim : int
+            dimension of the ViT model
+        dim_conv_stem : int
+            dimension of the convolutional stem for the ViT model
+        dim_head_vit : int
+            dimension of the head for the ViT model
+        depth_vit : tuple
+            depth of the ViT model
+        window_size : int
+            window size for the ViT model
+        mbconv_expansion_rate : float
+            expansion rate for the mbconv layer in the ViT model
+        mbconv_shrinkage_rate : float
+            shrinkage rate for the mbconv layer in the ViT model
+        dropout_vit : float
+            dropout rate for the ViT model
+        num_actions : int
+            number of actions for the RT1 model
+        depth_rt1 : int
+            depth of the RT1 model
+        heads : int
+            number of heads for the RT1 model
+        dim_head_rt1 : int
+            dimension of the head for the RT1 model
+        cond_drop_prob : float
+            conditional drop probability for the RT1 model
+        """
+
         self.vit = MaxViT(
-            num_classes=1000,
-            dim=96,
-            dim_conv_stem=64,
-            dim_head=32,
-            depth = (2, 2, 5, 2),
-            window_size=7,
-            mbconv_expansion_rate=4,
-            mbconv_shrinkage_rate=0.25,
-            dropout=0.1
+            num_classes=num_classes,
+            dim=dim,
+            dim_conv_stem=dim_conv_stem,
+            dim_head=dim_head_vit,
+            depth=depth_vit,
+            window_size=window_size,
+            mbconv_expansion_rate=mbconv_expansion_rate,
+            mbconv_shrinkage_rate=mbconv_shrinkage_rate,
+            dropout=dropout_vit
         )
 
         self.model = RT1(
-            vit = self.vit,
-            num_actions = 11,
-            depth=6,
-            heads=8,
-            dim_head=64,
-            cond_drop_prob=0.2
+            vit=self.vit,
+            num_actions=num_actions,
+            depth=depth_rt1,
+            heads=heads,
+            dim_head=dim_head_rt1,
+            cond_drop_prob=cond_drop_prob
         )
-    
+
     def train(self, video, instructions):
-        train_logits = self.model(video, instructions)
-        return train_logits
-    
+        """
+        Computes the logits for the given video and instructions using the RT1 model in training mode.
+
+        Parameters
+        ----------
+        video : torch.Tensor
+            a tensor containing the video data
+        instructions : torch.Tensor
+            a tensor containing the instructions
+
+        Returns
+        -------
+        torch.Tensor
+            a tensor containing the computed logits
+        """
+
+        try:
+            train_logits = self.model(video, instructions)
+            return train_logits
+        except Exception as e:
+            raise RuntimeError("Error in training: {}".format(e))
+
     def eval(self, video, instructions, cond_scale=1.0):
-        self.model.eval()
-        eval_logits = self.model(video, instructions, cond_scale=cond_scale)
-        return eval_logits
+        """
+        Computes the logits for the given video and instructions using the RT1 model in evaluation mode.
+
+        Parameters
+        ----------
+        video : torch.Tensor
+            a tensor containing the video data
+        instructions : torch.Tensor
+            a tensor containing the instructions
+        cond_scale : float, optional
+            a scale factor for the conditional scaling (default is 1.0)
+
+        Returns
+        -------
+        torch.Tensor
+            a tensor containing the computed logits
+        """
+
+        try:
+            self.model.eval()
+            eval_logits = self.model(video, instructions, cond_scale=cond_scale)
+            return eval_logits
+        except Exception as e:
+            raise RuntimeError("Error in evaluation: {}".format(e))
+
     
