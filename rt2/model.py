@@ -518,7 +518,7 @@ class TokenLearner(nn.Module):
 # Robotic Transformer
 
 @beartype
-class RT2(nn.Module):
+class RT1(nn.Module):
     def __init__(
         self,
         *,
@@ -630,3 +630,37 @@ class RT2(nn.Module):
 
         logits = self.to_logits(pooled)
         return logits
+    
+
+class RT2:
+    def __init__(self):
+        self.vit = MaxViT(
+            num_classes=1000,
+            dim=96,
+            dim_conv_stem=64,
+            dim_head=32,
+            depth = (2, 2, 5, 2),
+            window_size=7,
+            mbconv_expansion_rate=4,
+            mbconv_shrinkage_rate=0.25,
+            dropout=0.1
+        )
+
+        self.model = RT1(
+            vit = self.vit,
+            num_actions = 11,
+            depth=6,
+            heads=8,
+            dim_head=64,
+            cond_drop_prob=0.2
+        )
+    
+    def train(self, video, instructions):
+        train_logits = self.model(video, instructions)
+        return train_logits
+    
+    def eval(self, video, instructions, cond_scale=1.0):
+        self.model.eval()
+        eval_logits = self.model(video, instructions, cond_scale=cond_scale)
+        return eval_logits
+    

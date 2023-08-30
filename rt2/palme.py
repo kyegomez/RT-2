@@ -1,5 +1,4 @@
 import torch
-import torch.nn as nn
 
 from rt2.transformer import (
     AutoregressiveWrapper,
