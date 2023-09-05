@@ -28,6 +28,7 @@ palm-rlhf-pytorch = "*"
 tokenizers = "*"
 wandb = "*"
 classifier-free-guidance-pytorch = "*"
+deepspeed = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

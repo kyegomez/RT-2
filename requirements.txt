@@ -2,7 +2,7 @@ torch
 einops
 beartype
 pali-torch
-
+deepspeed
 palme
 transformers
 palm-rlhf-pytorch
