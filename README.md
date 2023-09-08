@@ -76,60 +76,6 @@ eval_logits = model.eval(video, instructions, cond_scale=3.)
 
 ```
 
-#### Forward Pass
-After initializing the RT2 class, you can perform a forward pass by calling the forward method and providing a video and optional texts:
-
-```python
-
-video = torch.rand((1, 3, 224, 224))
-texts = ["this is a text"]
-output = rt2(video, texts)
-
-```
-* The forward method returns the logits for the given video and texts.
-
-
-#### Changing Parameters
-You can also change the parameters of the RT2 class after initialization. For example, you can change the number of actions and action bins:
-
-```python
-rt2.num_actions = 5
-rt2.action_bins = 128
-```
-* After changing the parameters, you can perform a forward pass as before:
-
-```python
-output = rt2(video, texts)
-```
-
-#### Saving and Loading The Model
-
-```python
-torch.save(rt2.state_dict(), 'rt3_model.pth')
-```
-
-* You can then load the model with `torch.load``
-
-```python
-from rt2.model import RT2
-
-model = RT2()
-
-model.load_state_dict(torch.load('rt_model.pth'))
-```
-
-#### Eval the Model
-* Evaluate RT2 by setting it to eval mode and then performing a forward pass
-```python
-
-model.eval()
-with torch.no_grad():
-    video = torch.randn((1, 3, 10, 224))
-    texts = ["this is  atest"]
-    output = model(video, texts)
-
-```
-
 
 ## Benefits
 
@@ -147,7 +93,12 @@ RT-2 integrates a high-capacity Vision-Language model (VLM), initially pre-train
 RT-2 is fine-tuned using both web and robotics data. The resultant model interprets robot camera images and predicts direct actions for the robot to execute. In essence, it converts visual and language patterns into action-oriented instructions, a remarkable feat in the field of robotic control.
 
 # Datasets
-[Head over to see some datasets they used in the paper](docs/DATASETS.md)
+| Dataset | Description | Source | Percentage in Training Mixture (RT-2-PaLI-X) | Percentage in Training Mixture (RT-2-PaLM-E) |
+|---------|-------------|--------|----------------------------------------------|----------------------------------------------|
+| WebLI | Around 10B image-text pairs across 109 languages, filtered to the top 10% scoring cross-modal similarity examples to give 1B training examples. | Chen et al. (2023b), Driess et al. (2023) | N/A | N/A |
+| Episodic WebLI | Not used in co-fine-tuning RT-2-PaLI-X. | Chen et al. (2023a) | N/A | N/A |
+| Robotics Dataset | Demonstration episodes collected with a mobile manipulation robot. Each demonstration is annotated with a natural language instruction from one of seven skills. | Brohan et al. (2022) | 50% | 66% |
+| Language-Table | Used for training on several prediction tasks. | Lynch et al. (2022) | N/A | N/A |
 
 
 
