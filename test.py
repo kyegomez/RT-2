@@ -1,23 +1,10 @@
 import torch
 import unittest
-from rt2.experimental.rt2_palme import PALME, RT2
+from rt2.model import RT2
 
 class TestRT2(unittest.TestCase):
     def setUp(self):
-        self.rt2 = RT2(
-            palme=PALME(),
-            num_actions=11,
-            action_bins=256,
-            depth=6,
-            heads=8,
-            dim_head=64,
-            token_learner_ff_mult=2,
-            token_learner_num_layers=2,
-            token_learner_num_output_tokens=8,
-            cond_drop_prob=0.2,
-            use_attn_conditioner=False,
-            conditioner_kwargs=dict()
-        )
+        self.rt2 = RT2()
         self.video = torch.rand((1, 3, 10, 224, 224))
         self.texts = ["This is a test"]
 
