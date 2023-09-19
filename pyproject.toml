@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rt2"
-version = "0.0.7"
+version = "0.0.8"
 description = "rt-2 - PyTorch"
 authors = ["Kye Gomez <kye@apac.ai>"]
 license = "MIT"
@@ -28,7 +28,6 @@ palm-rlhf-pytorch = "*"
 tokenizers = "*"
 wandb = "*"
 classifier-free-guidance-pytorch = "*"
-deepspeed = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
