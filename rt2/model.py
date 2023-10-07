@@ -1,16 +1,17 @@
+from functools import partial
+from typing import Callable, List, Optional, Tuple
+
 import torch
 import torch.nn.functional as F
-from torch import nn, einsum
-
-from typing import List, Optional, Callable, Tuple
 from beartype import beartype
-
-from einops import pack, unpack, repeat, reduce, rearrange
+from classifier_free_guidance_pytorch import (
+    AttentionTextConditioner,
+    TextConditioner,
+    classifier_free_guidance,
+)
+from einops import pack, rearrange, reduce, repeat, unpack
 from einops.layers.torch import Rearrange, Reduce
-
-from functools import partial
-
-from classifier_free_guidance_pytorch import TextConditioner, AttentionTextConditioner, classifier_free_guidance
+from torch import einsum, nn
 
 # helpers
 
