@@ -1,6 +1,6 @@
 import torch
 import unittest
-from rt2.model import RT2
+from rt2 import RT2
 
 class TestRT2(unittest.TestCase):
     def setUp(self):
