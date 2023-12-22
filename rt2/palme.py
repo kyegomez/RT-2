@@ -9,7 +9,7 @@ from rt2.transformer import (
 )
 
 
-class PalmE(torch.nn.Module):
+class RT2(torch.nn.Module):
     def __init__(self, 
                  image_size=256, 
                  patch_size=32, 
