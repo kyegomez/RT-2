@@ -1,20 +1,11 @@
-import torch 
+import torch
 from rt2.model import RT2
+
+# usage
+img = torch.randn(1, 3, 256, 256)
+caption = torch.randint(0, 20000, (1, 1024))
 
 model = RT2()
 
-video = torch.randn(2, 3, 6, 224, 224)
-
-instructions = [
-    'bring me that apple sitting on the table',
-    'please pass the butter'
-]
-
-# compute the train logits
-train_logits = model.train(video, instructions)
-
-# set the model to evaluation mode
-model.model.eval()
-
-# compute the eval logits with a conditional scale of 3
-eval_logits = model.eval(video, instructions, cond_scale=3.)
+output = model(img, caption)
+print(output.shape)  # (1, 1024, 20000)

@@ -1,35 +1,86 @@
+import pytest
 import torch
-import unittest
-from rt2 import RT2
+from rt2.model import RT2
 
-class TestRT2(unittest.TestCase):
-    def setUp(self):
-        self.rt2 = RT2()
-        self.video = torch.rand((1, 3, 10, 224, 224))
-        self.texts = ["This is a test"]
+@pytest.fixture
+def rt2():
+    return RT2()
 
-    def test_forward(self):
-        output = self.rt2(self.video, self.texts)
-        self.assertEqual(output.shape, (1, 10, 11, 256))
+@pytest.fixture
+def img():
+    return torch.rand((1, 3, 256, 256))
 
-    def test_forward_no_texts(self):
-        output = self.rt2(self.video)
-        self.assertEqual(output.shape, (1, 10, 11, 256))
+@pytest.fixture
+def text():
+    return torch.randint(0, 20000, (1, 1024))
 
-    def test_forward_different_video_shape(self):
-        video = torch.rand((2, 3, 5, 224, 224))
-        output = self.rt2(video, self.texts)
-        self.assertEqual(output.shape, (2, 5, 11, 256))
+def test_init(rt2):
+    assert isinstance(rt2, RT2)
 
-    def test_forward_different_num_actions(self):
-        self.rt2.num_actions = 5
-        output = self.rt2(self.video, self.texts)
-        self.assertEqual(output.shape, (1, 10, 5, 256))
+def test_forward(rt2, img, text):
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
 
-    def test_forward_different_action_bins(self):
-        self.rt2.action_bins = 128
-        output = self.rt2(self.video, self.texts)
-        self.assertEqual(output.shape, (1, 10, 11, 128))
+def test_forward_different_img_shape(rt2, text):
+    img = torch.rand((2, 3, 256, 256))
+    output = rt2(img, text)
+    assert output.shape == (2, 1024, 20000)
 
-if __name__ == '__main__':
-    unittest.main()
+def test_forward_different_text_length(rt2, img):
+    text = torch.randint(0, 20000, (1, 512))
+    output = rt2(img, text)
+    assert output.shape == (1, 512, 20000)
+
+def test_forward_different_num_tokens(rt2, img, text):
+    rt2.decoder.num_tokens = 10000
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 10000)
+
+def test_forward_different_max_seq_len(rt2, img, text):
+    rt2.decoder.max_seq_len = 512
+    output = rt2(img, text)
+    assert output.shape == (1, 512, 20000)
+
+def test_forward_exception(rt2, img):
+    with pytest.raises(Exception):
+        rt2(img)
+
+def test_forward_no_return_embeddings(rt2, img, text):
+    rt2.encoder.return_embeddings = False
+    with pytest.raises(Exception):
+        rt2(img, text)
+
+def test_forward_different_encoder_dim(rt2, img, text):
+    rt2.encoder.dim = 256
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_encoder_depth(rt2, img, text):
+    rt2.encoder.depth = 3
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_encoder_heads(rt2, img, text):
+    rt2.encoder.heads = 4
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_decoder_dim(rt2, img, text):
+    rt2.decoder.dim = 256
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_decoder_depth(rt2, img, text):
+    rt2.decoder.depth = 3
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_decoder_heads(rt2, img, text):
+    rt2.decoder.heads = 4
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
+
+def test_forward_different_alibi_num_heads(rt2, img, text):
+    rt2.decoder.alibi_num_heads = 2
+    output = rt2(img, text)
+    assert output.shape == (1, 1024, 20000)
