@@ -10,23 +10,49 @@ from zeta import (
 
 
 class RT2(nn.Module):
+    """
+    RT2 model implementation.
+
+    Args:
+        image_size (int): Size of the input image.
+        patch_size (int): Size of each image patch.
+        encoder_dim (int): Dimension of the encoder.
+        encoder_depth (int): Depth of the encoder.
+        encoder_heads (int): Number of attention heads in the encoder.
+        num_tokens (int): Number of tokens in the decoder.
+        max_seq_len (int): Maximum sequence length in the decoder.
+        decoder_dim (int): Dimension of the decoder.
+        decoder_depth (int): Depth of the decoder.
+        decoder_heads (int): Number of attention heads in the decoder.
+        attn_kv_heads (int): Number of attention heads for key-value projection.
+        use_abs_pos_emb (bool): Whether to use absolute positional embeddings.
+        cross_attend (bool): Whether to enable cross-attention in the decoder.
+        attn_flash (bool): Whether to enable flash attention in the decoder.
+        qk_norm (bool): Whether to normalize queries and keys in attention.
+
+    Attributes:
+        encoder (ViTransformerWrapper): Encoder module.
+        decoder (AutoregressiveWrapper): Decoder module.
+
+    """
+
     def __init__(
         self,
-        image_size=256,
-        patch_size=32,
-        encoder_dim=512,
-        encoder_depth=6,
-        encoder_heads=8,
-        num_tokens=20000,
-        max_seq_len=1024,
-        decoder_dim=512,
-        decoder_depth=6,
-        decoder_heads=8,
-        attn_kv_heads=2,
-        use_abs_pos_emb=False,
-        cross_attend=True,
-        attn_flash=True,
-        qk_norm=True,
+        image_size: int = 256,
+        patch_size: int = 32,
+        encoder_dim: int = 512,
+        encoder_depth: int = 6,
+        encoder_heads: int = 8,
+        num_tokens: int = 20000,
+        max_seq_len: int = 1024,
+        decoder_dim: int = 512,
+        decoder_depth: int = 6,
+        decoder_heads: int = 8,
+        attn_kv_heads: int = 2,
+        use_abs_pos_emb: bool = False,
+        cross_attend: bool = True,
+        attn_flash: bool = True,
+        qk_norm: bool = True,
     ):
         super(RT2, self).__init__()
 
@@ -56,6 +82,20 @@ class RT2(nn.Module):
         self.decoder = AutoregressiveWrapper(self.decoder)
 
     def forward(self, img: torch.Tensor, text: torch.Tensor) -> torch.Tensor:
+        """
+        Forward pass of the RT2 model.
+
+        Args:
+            img (torch.Tensor): Input image tensor.
+            text (torch.Tensor): Input text tensor.
+
+        Returns:
+            torch.Tensor: Output tensor.
+
+        Raises:
+            Exception: If an error occurs during the forward pass.
+
+        """
         try:
             encoded = self.encoder(img, return_embeddings=True)
             return self.decoder(text, context=encoded)
