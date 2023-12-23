@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from zeta import (
+from zeta.structs import (
     AutoregressiveWrapper,
     Decoder,
     Encoder,
