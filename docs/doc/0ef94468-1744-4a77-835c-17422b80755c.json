@@ -1,0 +1,10 @@
+{
+    "summary": "The code imports the RT2 class from rt2.model and adds it to the __all__ list, allowing it to be imported directly when using this module.",
+    "details": [
+        {
+            "comment": "The code imports the RT2 class from rt2.model and adds it to the __all__ list, allowing it to be imported directly when using this module.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/rt2/__init__.py\":0-2",
+            "content": "from rt2.model import RT2\n__all__ = [\"RT2\"]"
+        }
+    ]
+}

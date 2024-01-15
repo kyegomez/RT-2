@@ -1,0 +1,45 @@
+{
+    "url": {
+        "full": "https://github.com/kyegomez/RT-2",
+        "partial": "kyegomez/RT-2"
+    },
+    "file_mapping": {
+        "0": {
+            "filepath": "/README.md",
+            "entry_id": 0,
+            "language_id": "plain-text"
+        },
+        "1": {
+            "filepath": "/example.py",
+            "entry_id": 20,
+            "language_id": "python"
+        },
+        "2": {
+            "filepath": "/pyproject.toml",
+            "entry_id": 24,
+            "language_id": "toml"
+        },
+        "3": {
+            "filepath": "/requirements.txt",
+            "entry_id": 28,
+            "language_id": "plain-text"
+        },
+        "4": {
+            "filepath": "/rt2/__init__.py",
+            "entry_id": 32,
+            "language_id": "python"
+        },
+        "5": {
+            "filepath": "/rt2/model.py",
+            "entry_id": 36,
+            "language_id": "python"
+        },
+        "6": {
+            "filepath": "/tests/test.py",
+            "entry_id": 46,
+            "language_id": "python"
+        }
+    },
+    "project_name": "RT-2",
+    "split_count": 1
+}

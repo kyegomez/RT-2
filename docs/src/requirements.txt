@@ -1,0 +1,12 @@
+torch
+einops
+beartype
+pali-torch
+deepspeed
+palme
+transformers
+palm-rlhf-pytorch
+tokenizers
+wandb
+classifier-free-guidance-pytorch
+zetascale

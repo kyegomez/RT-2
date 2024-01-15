@@ -1,0 +1,10 @@
+{
+    "summary": "This code is a list of Python library dependencies required for the project, located in the \"RT-2/requirements.txt\" file. These libraries include Torch for deep learning, Einops for tensor operations, Beartype for type safety, and more.",
+    "details": [
+        {
+            "comment": "This code is a list of Python library dependencies required for the project, located in the \"RT-2/requirements.txt\" file. These libraries include Torch for deep learning, Einops for tensor operations, Beartype for type safety, and more.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/requirements.txt\":0-11",
+            "content": "torch\neinops\nbeartype\npali-torch\ndeepspeed\npalme\ntransformers\npalm-rlhf-pytorch\ntokenizers\nwandb\nclassifier-free-guidance-pytorch\nzetascale"
+        }
+    ]
+}

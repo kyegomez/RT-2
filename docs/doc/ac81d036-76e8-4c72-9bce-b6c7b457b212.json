@@ -1,0 +1,10 @@
+{
+    "summary": "This code imports the RT2 model and initializes it. It then generates random image and caption tensors, passes them to the model, and prints the resulting output tensor.",
+    "details": [
+        {
+            "comment": "This code imports the RT2 model and initializes it. It then generates random image and caption tensors, passes them to the model, and prints the resulting output tensor.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/example.py\":0-13",
+            "content": "import torch\nfrom rt2.model import RT2\n# img: (batch_size, 3, 256, 256)\n# caption: (batch_size, 1024)\nimg = torch.randn(1, 3, 256, 256)\ncaption = torch.randint(0, 20000, (1, 1024))\n# model: RT2\nmodel = RT2()\n# Run model on img and caption\noutput = model(img, caption)\nprint(output)  # (1, 1024, 20000)"
+        }
+    ]
+}
