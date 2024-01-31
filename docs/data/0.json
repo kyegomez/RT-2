@@ -1,0 +1,292 @@
+{
+    "0": {
+        "file_id": 0,
+        "content": "/README.md",
+        "type": "filepath"
+    },
+    "1": {
+        "file_id": 0,
+        "content": "Code provides Discord server link and project details for open-source Robotic Transformer 2, licensed under MIT License with PALM-E approach for social sharing.",
+        "type": "summary"
+    },
+    "2": {
+        "file_id": 0,
+        "content": "[![Multi-Modality](agorabanner.png)](https://discord.gg/qUtxnK2NMf)\n# Robotic Transformer 2 (RT-2): The Vision-Language-Action Model\n![rt gif](rt.gif)\n<div align=\"center\">\n[![GitHub issues](https://img.shields.io/github/issues/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/issues) \n[![GitHub forks](https://img.shields.io/github/forks/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/network) \n[![GitHub stars](https://img.shields.io/github/stars/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/stargazers) \n[![GitHub license](https://img.shields.io/github/license/kyegomez/RT-2)](https://github.com/kyegomez/RT-2/blob/master/LICENSE)\n[![Share on Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Share%20%40kyegomez/RT-2)](https://twitter.com/intent/tweet?text=Excited%20to%20introduce%20RT-2,%20the%20all-new%20robotics%20model%20with%20the%20potential%20to%20revolutionize%20automation.%20Join%20us%20on%20this%20journey%20towards%20a%20smarter%20future.%20%23RT1%20%23Robotics&url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2)",
+        "type": "code",
+        "location": "/README.md:1-13"
+    },
+    "3": {
+        "file_id": 0,
+        "content": "Code snippet from \"RT-2/README.md\":0-12 shows a link to a Discord server, project information about Robotic Transformer 2 (RT-2), and badges representing issues, forks, stars, and license of the project along with a tweet share button. The code snippet is likely used as a header or introduction section in the README file.",
+        "type": "comment"
+    },
+    "4": {
+        "file_id": 0,
+        "content": "[![Share on Facebook](https://img.shields.io/badge/Share-%20facebook-blue)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2)[![Share on LinkedIn](https://img.shields.io/badge/Share-%20linkedin-blue)](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2&title=Introducing%20RT-2%2C%20the%20All-New%20Robotics%20Model&summary=RT-2%20is%20the%20next-generation%20robotics%20model%20that%20promises%20to%20transform%20industries%20with%20its%20intelligence%20and%20efficiency.%20Join%20us%20to%20be%20a%20part%20of%20this%20revolutionary%20journey%20%23RT1%20%23Robotics&source=)\n![Discord](https://img.shields.io/discord/999382051935506503)\n[![Share on Reddit](https://img.shields.io/badge/-Share%20on%20Reddit-orange)](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2&title=Exciting%20Times%20Ahead%20with%20RT-2%2C%20the%20All-New%20Robotics%20Model%20%23RT1%20%23Robotics)\n[![Share on Hacker N",
+        "type": "code",
+        "location": "/README.md:14-17"
+    },
+    "5": {
+        "file_id": 0,
+        "content": "Share on Facebook, LinkedIn, Discord, and Reddit badges are provided to promote the project.",
+        "type": "comment"
+    },
+    "6": {
+        "file_id": 0,
+        "content": "ews](https://img.shields.io/badge/-Share%20on%20Hacker%20News-orange)](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2&t=Exciting%20Times%20Ahead%20with%20RT-2%2C%20the%20All-New%20Robotics%20Model%20%23RT1%20%23Robotics)\n[![Share on Pinterest](https://img.shields.io/badge/-Share%20on%20Pinterest-red)](https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2&media=https%3A%2F%2Fexample.com%2Fimage.jpg&description=RT-2%2C%20the%20Revolutionary%20Robotics%20Model%20that%20will%20Change%20the%20Way%20We%20Work%20%23RT1%20%23Robotics)\n[![Share on WhatsApp](https://img.shields.io/badge/-Share%20on%20WhatsApp-green)](https://api.whatsapp.com/send?text=I%20just%20discovered%20RT-2,%20the%20all-new%20robotics%20model%20that%20promises%20to%20revolutionize%20automation.%20Join%20me%20on%20this%20exciting%20journey%20towards%20a%20smarter%20future.%20%23RT1%20%23Robotics%0A%0Ahttps%3A%2F%2Fgithub.com%2Fkyegomez%2FRT-2)\n</div>\n---\nThi",
+        "type": "code",
+        "location": "/README.md:17-26"
+    },
+    "7": {
+        "file_id": 0,
+        "content": "Code snippet contains sharing options for the RT-2 project on various social media platforms including Hacker News, Pinterest, and WhatsApp. It allows users to easily share the project with their networks.",
+        "type": "comment"
+    },
+    "8": {
+        "file_id": 0,
+        "content": "s is my implementation of the model behind RT-2. RT-2 leverages PALM-E as the backbone with a Vision encoder and language backbone where images are embedded and concatenated in the same space as the language embeddings. This architecture is quite easy to architect but suffers from a lack of deep understanding of both the unified multi modal representation or the individual modality representations.\n[CLICK HERE FOR THE PAPER](https://robotics-transformer2.github.io/assets/rt2.pdf)\n## Installation\nRT-2 can be easily installed using pip:\n```bash\npip install rt2\n```\n# Usage\nThe `RT2` class is a PyTorch module that integrates the PALM-E model into the RT-2 class. Here are some examples of how to use it:\n#### Initialization\nFirst, you need to initialize the `RT2` class. You can do this by providing the necessary parameters to the constructor:\n```python\nimport torch\nfrom rt2.model import RT2\n# img: (batch_size, 3, 256, 256)\n# caption: (batch_size, 1024)\nimg = torch.randn(1, 3, 256, 256)\ncaption = torch.randint(0, 20000, (1, 1024))",
+        "type": "code",
+        "location": "/README.md:26-55"
+    },
+    "9": {
+        "file_id": 0,
+        "content": "RT-2 utilizes PALM-E as its backbone, combining vision encoder and language backbone for multi-modal representation. Easily installable with pip. RT2 class in PyTorch integrates PALM-E model. Provide img and caption as parameters during initialization.",
+        "type": "comment"
+    },
+    "10": {
+        "file_id": 0,
+        "content": "# model: RT2\nmodel = RT2()\n# Run model on img and caption\noutput = model(img, caption)\nprint(output)  # (1, 1024, 20000)\n```\n## Benefits\nRT-2 stands at the intersection of vision, language, and action, delivering unmatched capabilities and significant benefits for the world of robotics.\n- Leveraging web-scale datasets and firsthand robotic data, RT-2 provides exceptional performance in understanding and translating visual and semantic cues into robotic control actions.\n- RT-2's architecture is based on well-established models, offering a high chance of success in diverse applications.\n- With clear installation instructions and well-documented examples, you can integrate RT-2 into your systems quickly.\n- RT-2 simplifies the complexities of multi-domaster understanding, reducing the burden on your data processing and action prediction pipeline.\n## Model Architecture\nRT-2 integrates a high-capacity Vision-Language model (VLM), initially pre-trained on web-scale data, with robotics data from RT-2. The ",
+        "type": "code",
+        "location": "/README.md:57-79"
+    },
+    "11": {
+        "file_id": 0,
+        "content": "This code imports and initializes an RT-2 model, which is a vision-language-action model for robotics. It then runs the model on an image and caption input to generate output, which is likely a robotic action response based on the visual and semantic understanding of the input. The output's shape indicates it could be a 1x1024x20000 tensor, possibly representing probabilities or other data for each action option.",
+        "type": "comment"
+    },
+    "12": {
+        "file_id": 0,
+        "content": "VLM uses images as input to generate a sequence of tokens representing natural language text. To adapt this for robotic control, RT-2 outputs actions represented as tokens in the model’s output.\nRT-2 is fine-tuned using both web and robotics data. The resultant model interprets robot camera images and predicts direct actions for the robot to execute. In essence, it converts visual and language patterns into action-oriented instructions, a remarkable feat in the field of robotic control.\n## Datasets\nDatasets used in the paper\n| Dataset | Description | Source | Percentage in Training Mixture (RT-2-PaLI-X) | Percentage in Training Mixture (RT-2-PaLM-E) |\n|---------|-------------|--------|----------------------------------------------|----------------------------------------------|\n| WebLI | Around 10B image-text pairs across 109 languages, filtered to the top 10% scoring cross-modal similarity examples to give 1B training examples. | Chen et al. (2023b), Driess et al. (2023) | N/A | N/A |\n| Episodic WebLI | Not used in co-fine-tuning RT-2-PaLI-X. | Chen et al. (2023a) | N/A | N/A |",
+        "type": "code",
+        "location": "/README.md:79-91"
+    },
+    "13": {
+        "file_id": 0,
+        "content": "RT-2 is a model that uses images as input to generate tokens representing natural language text, which is then adapted for robotic control by outputting actions represented as tokens. The model is fine-tuned using both web and robotics data, allowing it to interpret robot camera images and predict direct actions for the robot to execute. It converts visual and language patterns into action-oriented instructions, making it a significant advancement in robotic control. The provided table lists datasets used in the paper, including WebLI with 1B training examples and Episodic WebLI not used in co-fine-tuning.",
+        "type": "comment"
+    },
+    "14": {
+        "file_id": 0,
+        "content": "| Robotics Dataset | Demonstration episodes collected with a mobile manipulation robot. Each demonstration is annotated with a natural language instruction from one of seven skills. | Brohan et al. (2022) | 50% | 66% |\n| Language-Table | Used for training on several prediction tasks. | Lynch et al. (2022) | N/A | N/A |\n## Commercial Use Cases\nThe unique capabilities of RT-2 open up numerous commercial applications:\n- **Automated Factories**: RT-2 can significantly enhance automation in factories by understanding and responding to complex visual and language cues.\n- **Healthcare**: In robotic surgeries or patient care, RT-2 can assist in understanding and performing tasks based on both visual and verbal instructions.\n- **Smart Homes**: Integration of RT-2 in smart home systems can lead to improved automation, understanding homeowner instructions in a much more nuanced manner.\n## Contributing\nContributions to RT-2 are always welcome! Feel free to open an issue or pull request on the GitHub repository.",
+        "type": "code",
+        "location": "/README.md:92-109"
+    },
+    "15": {
+        "file_id": 0,
+        "content": "This code provides an overview of RT-2, a mobile manipulation robot with demonstration episodes and natural language instructions. The unique capabilities are discussed for various commercial applications such as automated factories, healthcare, and smart homes. Contributions to the project are encouraged through GitHub issues or pull requests.",
+        "type": "comment"
+    },
+    "16": {
+        "file_id": 0,
+        "content": "## Contact\nFor any queries or issues, kindly open a GitHub issue or get in touch with [kyegomez](https://github.com/kyegomez).\n## Citation\n```bibtex\n@inproceedings{RT-2,2023,\n  title={},\n  author={Anthony Brohan, Noah Brown, Justice Carbajal, Yevgen Chebotar, Xi Chen, Krzysztof Choromanski,\nTianli Ding, Danny Driess, Avinava Dubey, Chelsea Finn, Pete Florence, Chuyuan Fu,\nMontse Gonzalez Arenas, Keerthana Gopalakrishnan, Kehang Han, Karol Hausman, Alexander Herzog,\nJasmine Hsu, Brian Ichter, Alex Irpan, Nikhil Joshi, Ryan Julian, Dmitry Kalashnikov, Yuheng Kuang,\nIsabel Leal, Lisa Lee, Tsang-Wei Edward Lee, Sergey Levine, Yao Lu, Henryk Michalewski, Igor Mordatch,\nKarl Pertsch, Kanishka Rao, Krista Reymann, Michael Ryoo, Grecia Salazar, Pannag Sanketi,\nPierre Sermanet, Jaspiar Singh, Anikait Singh, Radu Soricut, Huong Tran, Vincent Vanhoucke, Quan Vuong,\nAyzaan Wahid, Stefan Welker, Paul Wohlhart, Jialin Wu, Fei Xia, Ted Xiao, Peng Xu, Sichun Xu, Tianhe Yu,\nand Brianna Zitkovich},\n  year={2024}\n}\n```\n## License",
+        "type": "code",
+        "location": "/README.md:111-134"
+    },
+    "17": {
+        "file_id": 0,
+        "content": "This code snippet provides contact information, citation details for the RT-2 project, and licensing information. The users are directed to open GitHub issues or reach out to kyegomez for queries or reporting issues. A citation in BibTeX format is also provided with authors, title, year, and other necessary fields for proper citation. The code mentions that the RT-2 project will be published in 2024. Finally, it specifies a license but does not provide the actual license text.",
+        "type": "comment"
+    },
+    "18": {
+        "file_id": 0,
+        "content": "RT-2 is provided under the MIT License. See the LICENSE file for details.",
+        "type": "code",
+        "location": "/README.md:136-136"
+    },
+    "19": {
+        "file_id": 0,
+        "content": "The code declares that the RT-2 software is licensed under the MIT License. The LICENSE file contains further details about this open-source license.",
+        "type": "comment"
+    },
+    "20": {
+        "file_id": 1,
+        "content": "/example.py",
+        "type": "filepath"
+    },
+    "21": {
+        "file_id": 1,
+        "content": "This code imports the RT2 model and initializes it. It then generates random image and caption tensors, passes them to the model, and prints the resulting output tensor.",
+        "type": "summary"
+    },
+    "22": {
+        "file_id": 1,
+        "content": "import torch\nfrom rt2.model import RT2\n# img: (batch_size, 3, 256, 256)\n# caption: (batch_size, 1024)\nimg = torch.randn(1, 3, 256, 256)\ncaption = torch.randint(0, 20000, (1, 1024))\n# model: RT2\nmodel = RT2()\n# Run model on img and caption\noutput = model(img, caption)\nprint(output)  # (1, 1024, 20000)",
+        "type": "code",
+        "location": "/example.py:1-14"
+    },
+    "23": {
+        "file_id": 1,
+        "content": "This code imports the RT2 model and initializes it. It then generates random image and caption tensors, passes them to the model, and prints the resulting output tensor.",
+        "type": "comment"
+    },
+    "24": {
+        "file_id": 2,
+        "content": "/pyproject.toml",
+        "type": "filepath"
+    },
+    "25": {
+        "file_id": 2,
+        "content": "This is a Python project configuration file for \"rt2\" using Poetry. It specifies the name, version, description, authors, license, readme, and homepage. It also lists dependencies (including Transformers, PyTorch, Einops, Beartype, Palme, etc.), classifiers, and build system requirements.",
+        "type": "summary"
+    },
+    "26": {
+        "file_id": 2,
+        "content": "[tool.poetry]\nname = \"rt2\"\nversion = \"0.1.0\"\ndescription = \"rt-2 - PyTorch\"\nauthors = [\"Kye Gomez <kye@apac.ai>\"]\nlicense = \"MIT\"\nreadme = \"README.md\"\nhomepage = \"https://github.com/kyegomez/rt-2\"\nrepository = \"https://github.com/kyegomez/rt-2\"\ndocumentation = \"https://github.com/kyegomez/rt-2\"\nkeywords = [\"artificial intelligence\", \"deep learning\", \"optimizers\", \"Prompt Engineering\"]\nclassifiers = [\n    \"Development Status :: 4 - Beta\",\n    \"Intended Audience :: Developers\",\n    \"Topic :: Scientific/Engineering :: Artificial Intelligence\",\n    \"License :: OSI Approved :: MIT License\",\n    \"Programming Language :: Python :: 3.6\",\n]\n[tool.poetry.dependencies]\npython = \"^3.6\"\ntransformers = \"*\"\ntorch = \"*\"\neinops = \"*\"\nbeartype = \"*\"\npalme = \"*\"\npalm-rlhf-pytorch = \"*\"\ntokenizers = \"*\"\nwandb = \"*\"\nclassifier-free-guidance-pytorch = \"*\"\nzetascale = \"*\"\n[build-system]\nrequires = [\"poetry-core>=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\"",
+        "type": "code",
+        "location": "/pyproject.toml:1-36"
+    },
+    "27": {
+        "file_id": 2,
+        "content": "This is a Python project configuration file for \"rt2\" using Poetry. It specifies the name, version, description, authors, license, readme, and homepage. It also lists dependencies (including Transformers, PyTorch, Einops, Beartype, Palme, etc.), classifiers, and build system requirements.",
+        "type": "comment"
+    },
+    "28": {
+        "file_id": 3,
+        "content": "/requirements.txt",
+        "type": "filepath"
+    },
+    "29": {
+        "file_id": 3,
+        "content": "This code is a list of Python library dependencies required for the project, located in the \"RT-2/requirements.txt\" file. These libraries include Torch for deep learning, Einops for tensor operations, Beartype for type safety, and more.",
+        "type": "summary"
+    },
+    "30": {
+        "file_id": 3,
+        "content": "torch\neinops\nbeartype\npali-torch\ndeepspeed\npalme\ntransformers\npalm-rlhf-pytorch\ntokenizers\nwandb\nclassifier-free-guidance-pytorch\nzetascale",
+        "type": "code",
+        "location": "/requirements.txt:1-12"
+    },
+    "31": {
+        "file_id": 3,
+        "content": "This code is a list of Python library dependencies required for the project, located in the \"RT-2/requirements.txt\" file. These libraries include Torch for deep learning, Einops for tensor operations, Beartype for type safety, and more.",
+        "type": "comment"
+    },
+    "32": {
+        "file_id": 4,
+        "content": "/rt2/__init__.py",
+        "type": "filepath"
+    },
+    "33": {
+        "file_id": 4,
+        "content": "The code imports the RT2 class from rt2.model and adds it to the __all__ list, allowing it to be imported directly when using this module.",
+        "type": "summary"
+    },
+    "34": {
+        "file_id": 4,
+        "content": "from rt2.model import RT2\n__all__ = [\"RT2\"]",
+        "type": "code",
+        "location": "/rt2/__init__.py:1-3"
+    },
+    "35": {
+        "file_id": 4,
+        "content": "The code imports the RT2 class from rt2.model and adds it to the __all__ list, allowing it to be imported directly when using this module.",
+        "type": "comment"
+    },
+    "36": {
+        "file_id": 5,
+        "content": "/rt2/model.py",
+        "type": "filepath"
+    },
+    "37": {
+        "file_id": 5,
+        "content": "The RT2 model is a neural network for image processing tasks utilizing transformers. It uses modules from the zeta library and has options for attention mechanisms and position embeddings, with encoder and decoder components.",
+        "type": "summary"
+    },
+    "38": {
+        "file_id": 5,
+        "content": "import torch\nfrom torch import nn\nfrom zeta.structs import (\n    AutoregressiveWrapper,\n    Decoder,\n    Encoder,\n    Transformer,\n    ViTransformerWrapper,\n)\nclass RT2(nn.Module):\n    \"\"\"\n    RT2 model implementation.\n    Args:\n        image_size (int): Size of the input image.\n        patch_size (int): Size of each image patch.\n        encoder_dim (int): Dimension of the encoder.\n        encoder_depth (int): Depth of the encoder.\n        encoder_heads (int): Number of attention heads in the encoder.\n        num_tokens (int): Number of tokens in the decoder.\n        max_seq_len (int): Maximum sequence length in the decoder.\n        decoder_dim (int): Dimension of the decoder.\n        decoder_depth (int): Depth of the decoder.\n        decoder_heads (int): Number of attention heads in the decoder.\n        attn_kv_heads (int): Number of attention heads for key-value projection.\n        use_abs_pos_emb (bool): Whether to use absolute positional embeddings.\n        cross_attend (bool): Whether to enable cross-attention in the decoder.",
+        "type": "code",
+        "location": "/rt2/model.py:1-29"
+    },
+    "39": {
+        "file_id": 5,
+        "content": "The code defines a class RT2 which is a neural network model for image processing tasks. It takes in various parameters such as image_size, patch_size, etc., and initializes modules from the zeta library like Encoder, Decoder, Transformer, etc. The model consists of an encoder and a decoder part with specified dimensions, depths, and attention heads. It also has options for using absolute position embeddings and enabling cross-attention in the decoder.",
+        "type": "comment"
+    },
+    "40": {
+        "file_id": 5,
+        "content": "        attn_flash (bool): Whether to enable flash attention in the decoder.\n        qk_norm (bool): Whether to normalize queries and keys in attention.\n    Attributes:\n        encoder (ViTransformerWrapper): Encoder module.\n        decoder (AutoregressiveWrapper): Decoder module.\n    \"\"\"\n    def __init__(\n        self,\n        image_size: int = 256,\n        patch_size: int = 32,\n        encoder_dim: int = 512,\n        encoder_depth: int = 6,\n        encoder_heads: int = 8,\n        num_tokens: int = 20000,\n        max_seq_len: int = 1024,\n        decoder_dim: int = 512,\n        decoder_depth: int = 6,\n        decoder_heads: int = 8,\n        attn_kv_heads: int = 2,\n        use_abs_pos_emb: bool = False,\n        cross_attend: bool = True,\n        attn_flash: bool = True,\n        qk_norm: bool = True,\n    ):\n        super(RT2, self).__init__()\n        self.encoder = ViTransformerWrapper(\n            image_size=image_size,\n            patch_size=patch_size,\n            attn_layers=Encoder(\n                dim=encoder_dim, depth=encoder_depth, heads=encoder_heads",
+        "type": "code",
+        "location": "/rt2/model.py:30-63"
+    },
+    "41": {
+        "file_id": 5,
+        "content": "This code defines a class called RT2 that inherits from some unspecified base class. It initializes various attributes, including an encoder module, a decoder module, and takes several parameters such as image_size, patch_size, etc. The encoder and decoder modules seem to be instances of the classes Encoder and AutoregressiveWrapper, respectively. The code also includes various boolean flags like attn_flash and qk_norm that control certain attention mechanisms in the model. Overall, this seems to be a definition of a transformer-based model for image processing tasks.",
+        "type": "comment"
+    },
+    "42": {
+        "file_id": 5,
+        "content": "            ),\n        )\n        self.decoder = Transformer(\n            num_tokens=num_tokens,\n            max_seq_len=max_seq_len,\n            use_abs_pos_emb=use_abs_pos_emb,\n            attn_layers=Decoder(\n                dim=decoder_dim,\n                depth=decoder_depth,\n                heads=decoder_heads,\n                cross_attend=cross_attend,\n                attn_kv_heads=attn_kv_heads,\n                attn_flash=attn_flash,\n                qk_norm=qk_norm,\n            ),\n        )\n        self.decoder = AutoregressiveWrapper(self.decoder)\n    def forward(self, img: torch.Tensor, text: torch.Tensor) -> torch.Tensor:\n        \"\"\"\n        Forward pass of the RT2 model.\n        Args:\n            img (torch.Tensor): Input image tensor.\n            text (torch.Tensor): Input text tensor.\n        Returns:\n            torch.Tensor: Output tensor.\n        Raises:\n            Exception: If an error occurs during the forward pass.\n        \"\"\"\n        try:\n            encoded = self.encoder(img, return_embeddings=True)",
+        "type": "code",
+        "location": "/rt2/model.py:64-100"
+    },
+    "43": {
+        "file_id": 5,
+        "content": "The code defines a class for the RT2 model, which consists of an encoder and decoder. The encoder takes in an image tensor and returns encoded embeddings. The decoder is a transformer with customizable layers and parameters. The forward function performs the forward pass for the model by calling the encoder and returning the output.",
+        "type": "comment"
+    },
+    "44": {
+        "file_id": 5,
+        "content": "            return self.decoder(text, context=encoded)\n        except Exception as error:\n            print(f\"Failed in forward method: {error}\")\n            raise",
+        "type": "code",
+        "location": "/rt2/model.py:101-104"
+    },
+    "45": {
+        "file_id": 5,
+        "content": "The code snippet is the implementation of a method, likely in a class-based model. It attempts to return the result of calling the 'decoder' function on 'text' and 'encoded'. If an exception occurs during this process, it prints an error message with details about the failure and then re-raises the exception.",
+        "type": "comment"
+    },
+    "46": {
+        "file_id": 6,
+        "content": "/tests/test.py",
+        "type": "filepath"
+    },
+    "47": {
+        "file_id": 6,
+        "content": "This code tests machine learning model's initialization, forward pass, and output shape consistency under varying input shapes, encoder/decoder attributes, and layer dimensions.",
+        "type": "summary"
+    },
+    "48": {
+        "file_id": 6,
+        "content": "import pytest\nimport torch\nfrom rt2.model import RT2\n@pytest.fixture\ndef rt2():\n    return RT2()\n@pytest.fixture\ndef img():\n    return torch.rand((1, 3, 256, 256))\n@pytest.fixture\ndef text():\n    return torch.randint(0, 20000, (1, 1024))\ndef test_init(rt2):\n    assert isinstance(rt2, RT2)\ndef test_forward(rt2, img, text):\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_img_shape(rt2, text):\n    img = torch.rand((2, 3, 256, 256))\n    output = rt2(img, text)\n    assert output.shape == (2, 1024, 20000)\ndef test_forward_different_text_length(rt2, img):\n    text = torch.randint(0, 20000, (1, 512))\n    output = rt2(img, text)\n    assert output.shape == (1, 512, 20000)\ndef test_forward_different_num_tokens(rt2, img, text):\n    rt2.decoder.num_tokens = 10000\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 10000)\ndef test_forward_different_max_seq_len(rt2, img, text):\n    rt2.decoder.max_seq_len = 512\n    output = rt2(img, text)\n    assert output.shape == (1, 512, 20000)",
+        "type": "code",
+        "location": "/tests/test.py:1-51"
+    },
+    "49": {
+        "file_id": 6,
+        "content": "This code defines several test fixtures for a machine learning model, which is implemented in the \"rt2.model import RT2\" line. The tests cover initialization of the model, as well as different forward pass scenarios with varying image and text input shapes, number of tokens, and maximum sequence length.",
+        "type": "comment"
+    },
+    "50": {
+        "file_id": 6,
+        "content": "def test_forward_exception(rt2, img):\n    with pytest.raises(Exception):\n        rt2(img)\ndef test_forward_no_return_embeddings(rt2, img, text):\n    rt2.encoder.return_embeddings = False\n    with pytest.raises(Exception):\n        rt2(img, text)\ndef test_forward_different_encoder_dim(rt2, img, text):\n    rt2.encoder.dim = 256\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_encoder_depth(rt2, img, text):\n    rt2.encoder.depth = 3\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_encoder_heads(rt2, img, text):\n    rt2.encoder.heads = 4\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_dim(rt2, img, text):\n    rt2.decoder.dim = 256\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_depth(rt2, img, text):\n    rt2.decoder.depth = 3\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_heads(rt2, img, text):",
+        "type": "code",
+        "location": "/tests/test.py:54-95"
+    },
+    "51": {
+        "file_id": 6,
+        "content": "These functions test the model's behavior when various attributes of the encoder and decoder are changed, ensuring that exceptions are raised as expected. The last six tests assert that output shape remains consistent despite changes to the dimensions, depth, or number of heads in the encoder and decoder layers.",
+        "type": "comment"
+    },
+    "52": {
+        "file_id": 6,
+        "content": "    rt2.decoder.heads = 4\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_alibi_num_heads(rt2, img, text):\n    rt2.decoder.alibi_num_heads = 2\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)",
+        "type": "code",
+        "location": "/tests/test.py:96-104"
+    },
+    "53": {
+        "file_id": 6,
+        "content": "This code tests the function `rt2` by changing the number of heads in the decoder and verifying that the output shape remains consistent with the expected shape (1, 1024, 20000).",
+        "type": "comment"
+    }
+}

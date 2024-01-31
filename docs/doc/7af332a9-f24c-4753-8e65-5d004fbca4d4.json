@@ -1,0 +1,20 @@
+{
+    "summary": "This code tests machine learning model's initialization, forward pass, and output shape consistency under varying input shapes, encoder/decoder attributes, and layer dimensions.",
+    "details": [
+        {
+            "comment": "This code defines several test fixtures for a machine learning model, which is implemented in the \"rt2.model import RT2\" line. The tests cover initialization of the model, as well as different forward pass scenarios with varying image and text input shapes, number of tokens, and maximum sequence length.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/tests/test.py\":0-50",
+            "content": "import pytest\nimport torch\nfrom rt2.model import RT2\n@pytest.fixture\ndef rt2():\n    return RT2()\n@pytest.fixture\ndef img():\n    return torch.rand((1, 3, 256, 256))\n@pytest.fixture\ndef text():\n    return torch.randint(0, 20000, (1, 1024))\ndef test_init(rt2):\n    assert isinstance(rt2, RT2)\ndef test_forward(rt2, img, text):\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_img_shape(rt2, text):\n    img = torch.rand((2, 3, 256, 256))\n    output = rt2(img, text)\n    assert output.shape == (2, 1024, 20000)\ndef test_forward_different_text_length(rt2, img):\n    text = torch.randint(0, 20000, (1, 512))\n    output = rt2(img, text)\n    assert output.shape == (1, 512, 20000)\ndef test_forward_different_num_tokens(rt2, img, text):\n    rt2.decoder.num_tokens = 10000\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 10000)\ndef test_forward_different_max_seq_len(rt2, img, text):\n    rt2.decoder.max_seq_len = 512\n    output = rt2(img, text)\n    assert output.shape == (1, 512, 20000)"
+        },
+        {
+            "comment": "These functions test the model's behavior when various attributes of the encoder and decoder are changed, ensuring that exceptions are raised as expected. The last six tests assert that output shape remains consistent despite changes to the dimensions, depth, or number of heads in the encoder and decoder layers.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/tests/test.py\":53-94",
+            "content": "def test_forward_exception(rt2, img):\n    with pytest.raises(Exception):\n        rt2(img)\ndef test_forward_no_return_embeddings(rt2, img, text):\n    rt2.encoder.return_embeddings = False\n    with pytest.raises(Exception):\n        rt2(img, text)\ndef test_forward_different_encoder_dim(rt2, img, text):\n    rt2.encoder.dim = 256\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_encoder_depth(rt2, img, text):\n    rt2.encoder.depth = 3\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_encoder_heads(rt2, img, text):\n    rt2.encoder.heads = 4\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_dim(rt2, img, text):\n    rt2.decoder.dim = 256\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_depth(rt2, img, text):\n    rt2.decoder.depth = 3\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_decoder_heads(rt2, img, text):"
+        },
+        {
+            "comment": "This code tests the function `rt2` by changing the number of heads in the decoder and verifying that the output shape remains consistent with the expected shape (1, 1024, 20000).",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/tests/test.py\":95-103",
+            "content": "    rt2.decoder.heads = 4\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)\ndef test_forward_different_alibi_num_heads(rt2, img, text):\n    rt2.decoder.alibi_num_heads = 2\n    output = rt2(img, text)\n    assert output.shape == (1, 1024, 20000)"
+        }
+    ]
+}

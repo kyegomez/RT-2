@@ -1,0 +1,10 @@
+{
+    "summary": "This is a Python project configuration file for \"rt2\" using Poetry. It specifies the name, version, description, authors, license, readme, and homepage. It also lists dependencies (including Transformers, PyTorch, Einops, Beartype, Palme, etc.), classifiers, and build system requirements.",
+    "details": [
+        {
+            "comment": "This is a Python project configuration file for \"rt2\" using Poetry. It specifies the name, version, description, authors, license, readme, and homepage. It also lists dependencies (including Transformers, PyTorch, Einops, Beartype, Palme, etc.), classifiers, and build system requirements.",
+            "location": "\"/media/root/Prima/works/RT-2/docs/src/pyproject.toml\":0-35",
+            "content": "[tool.poetry]\nname = \"rt2\"\nversion = \"0.1.0\"\ndescription = \"rt-2 - PyTorch\"\nauthors = [\"Kye Gomez <kye@apac.ai>\"]\nlicense = \"MIT\"\nreadme = \"README.md\"\nhomepage = \"https://github.com/kyegomez/rt-2\"\nrepository = \"https://github.com/kyegomez/rt-2\"\ndocumentation = \"https://github.com/kyegomez/rt-2\"\nkeywords = [\"artificial intelligence\", \"deep learning\", \"optimizers\", \"Prompt Engineering\"]\nclassifiers = [\n    \"Development Status :: 4 - Beta\",\n    \"Intended Audience :: Developers\",\n    \"Topic :: Scientific/Engineering :: Artificial Intelligence\",\n    \"License :: OSI Approved :: MIT License\",\n    \"Programming Language :: Python :: 3.6\",\n]\n[tool.poetry.dependencies]\npython = \"^3.6\"\ntransformers = \"*\"\ntorch = \"*\"\neinops = \"*\"\nbeartype = \"*\"\npalme = \"*\"\npalm-rlhf-pytorch = \"*\"\ntokenizers = \"*\"\nwandb = \"*\"\nclassifier-free-guidance-pytorch = \"*\"\nzetascale = \"*\"\n[build-system]\nrequires = [\"poetry-core>=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\""
+        }
+    ]
+}
